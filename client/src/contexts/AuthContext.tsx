@@ -16,18 +16,17 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [clubName, setClubName] = useState<string | null>(null);
 
-  // Restore auth from localStorage on mount
+  // Não restaurar autenticação — sempre começar do splash
+  // Cada refresh leva de volta ao login
   useEffect(() => {
+    // Limpar qualquer autenticação anterior
     try {
-      const stored = localStorage.getItem(AUTH_STORAGE_KEY);
-      if (stored) {
-        const { club } = JSON.parse(stored);
-        setClubName(club);
-        setIsAuthenticated(true);
-      }
+      localStorage.removeItem(AUTH_STORAGE_KEY);
     } catch {
-      // ignore parse errors
+      // ignore
     }
+    setIsAuthenticated(false);
+    setClubName(null);
   }, []);
 
   const authenticate = async (key: string): Promise<boolean> => {
@@ -38,11 +37,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     if (key.toLowerCase().trim() === VALID_CLUB_NAME.toLowerCase()) {
       setClubName(VALID_CLUB_NAME);
       setIsAuthenticated(true);
-      try {
-        localStorage.setItem(AUTH_STORAGE_KEY, JSON.stringify({ club: VALID_CLUB_NAME }));
-      } catch {
-        // ignore storage errors
-      }
+      // Não persistir — apenas manter em memória durante a sessão
       return true;
     }
     return false;
