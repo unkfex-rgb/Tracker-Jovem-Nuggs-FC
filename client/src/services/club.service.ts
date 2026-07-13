@@ -79,14 +79,54 @@ export const clubService = {
     return computeKPIs(club, matchesData as Match[]);
   },
 
-  async getRecentMatches(_id: string, limit: number = 10): Promise<Match[]> {
-    await delay();
-    return (matchesData as Match[]).slice(0, limit);
+  async getRecentMatches(id: string, limit: number = 10): Promise<Match[]> {
+    try {
+      const response = await fetch(`/api/club-matches?clubId=${id}`);
+      if (!response.ok) throw new Error("Failed to fetch matches");
+      const matches = await response.json();
+      
+      // Transform to Match type
+      return matches.slice(0, limit).map((m: any) => ({
+        id: `${m.date}-${m.opponent}`,
+        date: m.date,
+        opponent: m.opponent,
+        result: m.result as MatchResult,
+        goalsFor: m.goalsFor,
+        goalsAgainst: m.goalsAgainst,
+        possession: 50,
+        shots: 0,
+        shotsOnTarget: 0,
+        division: 1
+      }));
+    } catch (error) {
+      console.error("Error fetching matches:", error);
+      return (matchesData as Match[]).slice(0, limit);
+    }
   },
 
-  async getPlayers(_id: string): Promise<Player[]> {
-    await delay();
-    return playersData as Player[];
+  async getPlayers(id: string): Promise<Player[]> {
+    try {
+      const response = await fetch(`/api/club-members?clubId=${id}`);
+      if (!response.ok) throw new Error("Failed to fetch members");
+      const members = await response.json();
+      
+      // Transform to Player type
+      return members.map((m: any, idx: number) => ({
+        id: `player-${idx}`,
+        name: m.name,
+        position: m.position === "Goalkeeper" ? "GK" : m.position === "Defender" ? "DEF" : m.position === "Midfielder" ? "MID" : "FWD",
+        positionLabel: m.position,
+        avgRating: m.rating,
+        games: m.games,
+        goals: m.goals,
+        assists: m.assists,
+        avgMatchRating: (m.rating / 100) * 10,
+        goalParticipations: m.goals + m.assists
+      }));
+    } catch (error) {
+      console.error("Error fetching players:", error);
+      return playersData as Player[];
+    }
   },
 
   async getStreaks(_id: string): Promise<Streak> {
