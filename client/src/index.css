@@ -121,9 +121,11 @@
     @apply bg-background text-foreground;
     font-family: var(--font-sans);
   }
+
   .font-display {
     font-family: var(--font-display);
   }
+
   button:not(:disabled),
   [role="button"]:not([aria-disabled="true"]),
   [type="button"]:not(:disabled),
@@ -173,6 +175,7 @@
     z-index: -1;
     background: #000000;
   }
+
   .aurora-bg::before,
   .aurora-bg::after,
   .aurora-bg .aurora-green {
@@ -186,6 +189,7 @@
     border-radius: var(--radius-lg);
     transition: border-color 0.2s ease, box-shadow 0.2s ease;
   }
+
   .glass-card:hover {
     border-color: #3f3f46;
     box-shadow: 0 0 24px rgba(255, 255, 255, 0.05);
@@ -201,13 +205,16 @@
     width: 6px;
     height: 6px;
   }
+
   ::-webkit-scrollbar-track {
     background: transparent;
   }
+
   ::-webkit-scrollbar-thumb {
     background: oklch(0.4 0.02 260 / 40%);
     border-radius: 3px;
   }
+
   ::-webkit-scrollbar-thumb:hover {
     background: oklch(0.5 0.02 260 / 60%);
   }
