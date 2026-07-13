@@ -1,11 +1,10 @@
 import { Link, useLocation } from "wouter";
-import { BarChart3, Home, Search, Trophy, Users } from "lucide-react";
+import { BarChart3, Home, Trophy, Users } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { LogoutButton } from "./LogoutButton";
 
 const navItems = [
   { href: "/", label: "Início", icon: Home },
-  { href: "/search", label: "Buscar", icon: Search },
   { href: "/club", label: "Clube", icon: Trophy },
   { href: "/squad", label: "Elenco", icon: Users },
   { href: "/h2h", label: "H2H", icon: BarChart3 },
