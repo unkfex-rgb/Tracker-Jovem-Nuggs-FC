@@ -12,7 +12,7 @@ export function Layout({ children }: LayoutProps) {
     <div className="relative min-h-screen flex flex-col">
       <AuroraBackground />
       <Navigation />
-      <main className="flex-1 lg:ml-64 pb-20 lg:pb-0">
+      <main className="flex-1 pb-20 lg:pb-0">
         {children}
       </main>
       <Footer />

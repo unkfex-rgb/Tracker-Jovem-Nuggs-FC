@@ -1,7 +1,8 @@
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import NotFound from "@/pages/NotFound";
-import Preload from "@/pages/Preload";
+import Splash from "@/pages/Splash";
+import Login from "@/pages/Login";
 import { Route, Switch } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { Layout } from "./components/Layout";
@@ -15,7 +16,7 @@ import H2H from "./pages/H2H";
 
 function ProtectedRoute({ component: Component }: { component: React.ComponentType }) {
   const { isAuthenticated } = useAuth();
-  return isAuthenticated ? <Component /> : <Preload />;
+  return isAuthenticated ? <Component /> : <Login />;
 }
 
 function Router() {
@@ -23,7 +24,13 @@ function Router() {
 
   return (
     <Switch>
-      {!isAuthenticated && <Route path="*" component={Preload} />}
+      {!isAuthenticated && (
+        <>
+          <Route path="/splash" component={Splash} />
+          <Route path="/login" component={Login} />
+          <Route path="*" component={Splash} />
+        </>
+      )}
       {isAuthenticated && (
         <>
           <Route path="/" component={Home} />
