@@ -24,7 +24,7 @@ export default function Login() {
     if (success) {
       setStatus("success");
       setTimeout(() => {
-        navigate("/club");
+        navigate("/");
       }, 1200);
     } else {
       setStatus("error");
