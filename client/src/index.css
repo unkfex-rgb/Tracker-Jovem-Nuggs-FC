@@ -115,6 +115,8 @@
   --sidebar-border: #262626;
   --sidebar-ring: #ffffff;
 }
+
+@layer base {
   body {
     @apply bg-background text-foreground;
     font-family: var(--font-sans);
