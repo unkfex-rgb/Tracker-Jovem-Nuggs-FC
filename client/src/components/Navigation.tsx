@@ -1,6 +1,7 @@
 import { Link, useLocation } from "wouter";
 import { BarChart3, Home, Search, Trophy, Users } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { LogoutButton } from "./LogoutButton";
 
 const navItems = [
   { href: "/", label: "Início", icon: Home },
@@ -15,23 +16,20 @@ export function Navigation() {
 
   return (
     <>
-      {/* Desktop sidebar */}
-      <aside
-        className="fixed left-0 top-0 z-40 hidden h-screen w-64 flex-col border-r border-white/8 bg-sidebar/80 backdrop-blur-xl lg:flex"
-        aria-label="Navegação principal"
-      >
-        <Link href="/" className="flex items-center gap-3 px-6 py-6">
+      {/* Desktop header */}
+      <header className="hidden lg:flex fixed top-0 left-0 right-0 z-40 h-16 items-center justify-between px-6 border-b border-white/10 bg-black/50 backdrop-blur-xl">
+        <Link href="/" className="flex items-center gap-3">
           <img
             src="/manus-storage/clubstats-logo_e0c71d31.png"
             alt="ClubStats"
-            className="h-9 w-9"
+            className="h-8 w-8"
           />
-          <span className="font-display text-xl font-bold tracking-tight text-white">
+          <span className="font-display text-lg font-bold tracking-tight text-white">
             ClubStats
           </span>
         </Link>
 
-        <nav className="flex flex-1 flex-col gap-1 px-3">
+        <nav className="flex items-center gap-1">
           {navItems.map((item) => {
             const Icon = item.icon;
             const isActive = location === item.href;
@@ -40,10 +38,10 @@ export function Navigation() {
                 key={item.href}
                 href={item.href}
                 className={cn(
-                  "flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium transition-all duration-200",
+                  "flex items-center gap-2 rounded-lg px-3 py-2 text-sm font-medium transition-all duration-200",
                   isActive
-                    ? "bg-primary/15 text-white shadow-[0_0_20px_rgba(124,58,237,0.08)]"
-                    : "text-muted-foreground hover:bg-white/5 hover:text-white"
+                    ? "bg-white/10 text-white"
+                    : "text-gray-400 hover:bg-white/5 hover:text-white"
                 )}
               >
                 <Icon className="h-4 w-4" />
@@ -53,12 +51,8 @@ export function Navigation() {
           })}
         </nav>
 
-        <div className="px-6 py-4">
-          <p className="text-xs text-gray-500">
-            Not affiliated with EA Sports
-          </p>
-        </div>
-      </aside>
+        <LogoutButton />
+      </header>
 
       {/* Mobile bottom nav */}
       <nav
