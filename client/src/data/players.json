@@ -1,0 +1,13 @@
+[
+  { "id": "p1", "name": "NuggsBr", "position": "GK", "positionLabel": "Goleiro", "avgRating": 88.4, "games": 312, "goals": 0, "assists": 2, "avgMatchRating": 7.8, "goalParticipations": 2 },
+  { "id": "p2", "name": "DaviSilva", "position": "DEF", "positionLabel": "Zagueiro", "avgRating": 91.2, "games": 298, "goals": 14, "assists": 8, "avgMatchRating": 8.1, "goalParticipations": 22 },
+  { "id": "p3", "name": "PedroH", "position": "DEF", "positionLabel": "Lateral", "avgRating": 89.7, "games": 285, "goals": 9, "assists": 21, "avgMatchRating": 7.9, "goalParticipations": 30 },
+  { "id": "p4", "name": "LucasFC", "position": "MID", "positionLabel": "Volante", "avgRating": 92.5, "games": 340, "goals": 28, "assists": 45, "avgMatchRating": 8.4, "goalParticipations": 73 },
+  { "id": "p5", "name": "Matheus10", "position": "MID", "positionLabel": "Meia-Atacante", "avgRating": 93.1, "games": 320, "goals": 67, "assists": 52, "avgMatchRating": 8.6, "goalParticipations": 119 },
+  { "id": "p6", "name": "RafaGOAT", "position": "MID", "positionLabel": "Ponta", "avgRating": 90.8, "games": 276, "goals": 41, "assists": 38, "avgMatchRating": 8.2, "goalParticipations": 79 },
+  { "id": "p7", "name": "Bielzin", "position": "FWD", "positionLabel": "Centroavante", "avgRating": 94.3, "games": 305, "goals": 189, "assists": 34, "avgMatchRating": 8.9, "goalParticipations": 223 },
+  { "id": "p8", "name": "JotaLive", "position": "FWD", "positionLabel": "Ponta-Direita", "avgRating": 89.5, "games": 258, "goals": 73, "assists": 41, "avgMatchRating": 8.0, "goalParticipations": 114 },
+  { "id": "p9", "name": "CaioBR", "position": "DEF", "positionLabel": "Zagueiro", "avgRating": 87.3, "games": 210, "goals": 3, "assists": 1, "avgMatchRating": 7.6, "goalParticipations": 4 },
+  { "id": "p10", "name": "Guga23", "position": "MID", "positionLabel": "Meia-Central", "avgRating": 88.0, "games": 195, "goals": 15, "assists": 19, "avgMatchRating": 7.7, "goalParticipations": 34 },
+  { "id": "p11", "name": "VinixD", "position": "FWD", "positionLabel": "Ponta-Esquerda", "avgRating": 90.1, "games": 240, "goals": 56, "assists": 28, "avgMatchRating": 8.1, "goalParticipations": 84 }
+]

@@ -1,0 +1,27 @@
+{
+  "clubA": {
+    "name": "Jovem Nuggs FC",
+    "emblem": "/manus-storage/clubstats-club-emblem_01d094f8.png",
+    "wins": 18,
+    "draws": 5,
+    "losses": 9,
+    "goalsFor": 54,
+    "goalsAgainst": 31,
+    "goalDifference": 23,
+    "avgPossession": 58.5,
+    "winRate": 56.25
+  },
+  "clubB": {
+    "name": "Elite Squad",
+    "emblem": "",
+    "wins": 9,
+    "draws": 5,
+    "losses": 18,
+    "goalsFor": 31,
+    "goalsAgainst": 54,
+    "goalDifference": -23,
+    "avgPossession": 41.5,
+    "winRate": 28.13
+  },
+  "totalMeetings": 32
+}

@@ -1,0 +1,12 @@
+[
+  { "id": "m1", "date": "2025-07-12", "opponent": "Galaticos FC", "result": "W", "goalsFor": 4, "goalsAgainst": 1, "possession": 62, "shots": 14, "shotsOnTarget": 8, "division": 1 },
+  { "id": "m2", "date": "2025-07-11", "opponent": "Real Pro Club", "result": "W", "goalsFor": 3, "goalsAgainst": 0, "possession": 58, "shots": 11, "shotsOnTarget": 6, "division": 1 },
+  { "id": "m3", "date": "2025-07-10", "opponent": "Brazilian Kings", "result": "D", "goalsFor": 2, "goalsAgainst": 2, "possession": 51, "shots": 9, "shotsOnTarget": 4, "division": 1 },
+  { "id": "m4", "date": "2025-07-09", "opponent": "Samba FC", "result": "W", "goalsFor": 5, "goalsAgainst": 2, "possession": 65, "shots": 16, "shotsOnTarget": 10, "division": 1 },
+  { "id": "m5", "date": "2025-07-08", "opponent": "Elite Squad", "result": "L", "goalsFor": 1, "goalsAgainst": 3, "possession": 44, "shots": 7, "shotsOnTarget": 3, "division": 1 },
+  { "id": "m6", "date": "2025-07-07", "opponent": "Phoenix BR", "result": "W", "goalsFor": 2, "goalsAgainst": 1, "possession": 55, "shots": 10, "shotsOnTarget": 5, "division": 1 },
+  { "id": "m7", "date": "2025-07-06", "opponent": "Os Imortais", "result": "W", "goalsFor": 6, "goalsAgainst": 0, "possession": 68, "shots": 18, "shotsOnTarget": 12, "division": 1 },
+  { "id": "m8", "date": "2025-07-05", "opponent": "Dragons EA", "result": "D", "goalsFor": 1, "goalsAgainst": 1, "possession": 49, "shots": 8, "shotsOnTarget": 3, "division": 1 },
+  { "id": "m9", "date": "2025-07-04", "opponent": "Furia Pro", "result": "W", "goalsFor": 3, "goalsAgainst": 1, "possession": 60, "shots": 12, "shotsOnTarget": 7, "division": 1 },
+  { "id": "m10", "date": "2025-07-03", "opponent": "Inferno Club", "result": "L", "goalsFor": 0, "goalsAgainst": 2, "possession": 42, "shots": 5, "shotsOnTarget": 1, "division": 1 }
+]

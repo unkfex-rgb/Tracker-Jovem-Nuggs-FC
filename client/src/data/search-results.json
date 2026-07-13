@@ -1,0 +1,12 @@
+[
+  { "id": "jovem-nuggs-fc", "name": "Jovem Nuggs FC", "emblem": "/manus-storage/clubstats-club-emblem_01d094f8.png", "platform": "PS5", "division": 1, "skillRating": 1875, "country": "Brazil" },
+  { "id": "elite-squad", "name": "Elite Squad", "emblem": "", "platform": "PS5", "division": 1, "skillRating": 1920, "country": "Brazil" },
+  { "id": "galaticos-fc", "name": "Galaticos FC", "emblem": "", "platform": "PS5", "division": 2, "skillRating": 1650, "country": "Portugal" },
+  { "id": "real-pro-club", "name": "Real Pro Club", "emblem": "", "platform": "Xbox", "division": 1, "skillRating": 1810, "country": "Spain" },
+  { "id": "samba-fc", "name": "Samba FC", "emblem": "", "platform": "PS5", "division": 3, "skillRating": 1420, "country": "Brazil" },
+  { "id": "phoenix-br", "name": "Phoenix BR", "emblem": "", "platform": "PS5", "division": 2, "skillRating": 1580, "country": "Brazil" },
+  { "id": "dragons-ea", "name": "Dragons EA", "emblem": "", "platform": "PC", "division": 1, "skillRating": 1790, "country": "England" },
+  { "id": "furia-pro", "name": "Furia Pro", "emblem": "", "platform": "PS5", "division": 2, "skillRating": 1700, "country": "Brazil" },
+  { "id": "inferno-club", "name": "Inferno Club", "emblem": "", "platform": "Xbox", "division": 1, "skillRating": 1855, "country": "Germany" },
+  { "id": "brazilian-kings", "name": "Brazilian Kings", "emblem": "", "platform": "PS5", "division": 1, "skillRating": 1890, "country": "Brazil" }
+]

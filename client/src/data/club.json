@@ -1,0 +1,16 @@
+{
+  "id": "jovem-nuggs-fc",
+  "name": "Jovem Nuggs FC",
+  "emblem": "/manus-storage/clubstats-club-emblem_01d094f8.png",
+  "platform": "PS5",
+  "division": 1,
+  "skillRating": 1875,
+  "country": "Brazil",
+  "countryCode": "BR",
+  "founded": "2023",
+  "record": {
+    "wins": 247,
+    "draws": 38,
+    "losses": 95
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "longestWinStreak": 14,
+  "longestUnbeatenRun": 22,
+  "longestCleanSheetRun": 7,
+  "biggestWin": { "score": "8-0", "opponent": "Noob Masters" },
+  "worstLoss": { "score": "0-5", "opponent": "Elite Squad" },
+  "bestCampaign": { "season": "Season 12", "points": 89, "division": 1 }
+}
