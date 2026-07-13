@@ -14,48 +14,51 @@ import ClubProfile from "./pages/ClubProfile";
 import Squad from "./pages/Squad";
 import H2H from "./pages/H2H";
 
-function ProtectedRoute({ component: Component }: { component: React.ComponentType }) {
-  const { isAuthenticated } = useAuth();
-  return isAuthenticated ? <Component /> : <Login />;
-}
-
-function Router() {
-  const { isAuthenticated } = useAuth();
-
+function AuthRouter() {
   return (
     <Switch>
-      {!isAuthenticated && (
-        <>
-          <Route path="/splash" component={Splash} />
-          <Route path="/login" component={Login} />
-          <Route path="*" component={Splash} />
-        </>
-      )}
-      {isAuthenticated && (
-        <>
-          <Route path="/" component={Home} />
-          <Route path="/search" component={Search} />
-          <Route path="/club" component={ClubProfile} />
-          <Route path="/squad" component={Squad} />
-          <Route path="/h2h" component={H2H} />
-          <Route path="/404" component={NotFound} />
-          <Route component={NotFound} />
-        </>
-      )}
+      <Route path="/splash" component={Splash} />
+      <Route path="/login" component={Login} />
+      <Route component={Splash} />
     </Switch>
   );
 }
 
+function AppRouter() {
+  return (
+    <Switch>
+      <Route path="/" component={Home} />
+      <Route path="/search" component={Search} />
+      <Route path="/club" component={ClubProfile} />
+      <Route path="/squad" component={Squad} />
+      <Route path="/h2h" component={H2H} />
+      <Route path="/404" component={NotFound} />
+      <Route component={NotFound} />
+    </Switch>
+  );
+}
+
+function Router() {
+  const { isAuthenticated } = useAuth();
+  return isAuthenticated ? <AppRouter /> : <AuthRouter />;
+}
+
 function App() {
+  const { isAuthenticated } = useAuth();
+
   return (
     <ErrorBoundary>
       <ThemeProvider defaultTheme="dark">
         <AuthProvider>
           <TooltipProvider>
             <Toaster />
-            <Layout>
+            {isAuthenticated ? (
+              <Layout>
+                <Router />
+              </Layout>
+            ) : (
               <Router />
-            </Layout>
+            )}
           </TooltipProvider>
         </AuthProvider>
       </ThemeProvider>
