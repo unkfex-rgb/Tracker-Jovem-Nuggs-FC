@@ -9,7 +9,7 @@ import { Layout } from "./components/Layout";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import { AuthProvider, useAuth } from "./contexts/AuthContext";
 import Home from "./pages/Home";
-
+import Search from "./pages/Search";
 import ClubProfile from "./pages/ClubProfile";
 import Squad from "./pages/Squad";
 import H2H from "./pages/H2H";
@@ -28,7 +28,7 @@ function AppRouter() {
   return (
     <Switch>
       <Route path="/" component={Home} />
-
+      <Route path="/search" component={Search} />
       <Route path="/club" component={ClubProfile} />
       <Route path="/squad" component={Squad} />
       <Route path="/h2h" component={H2H} />
