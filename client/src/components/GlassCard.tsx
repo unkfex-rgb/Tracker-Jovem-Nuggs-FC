@@ -15,8 +15,8 @@ const glassCardVariants = cva(
       },
       hover: {
         none: "",
-        lift: "hover:-translate-y-0.5 hover:shadow-lg",
-        glow: "hover:border-white/20 hover:shadow-[0_0_30px_rgba(124,58,237,0.12)]",
+        lift: "hover:-translate-y-0.5 hover:shadow-[0_0_20px_rgba(255,255,255,0.08)]",
+        glow: "hover:border-white/20 hover:shadow-[0_0_30px_rgba(255,255,255,0.1)]",
       },
     },
     defaultVariants: {

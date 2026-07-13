@@ -43,7 +43,15 @@ const item: Variants = {
 
 export default function Home() {
   return (
-    <div className="container py-8 lg:py-12">
+    <div className="container py-8 lg:py-12 relative">
+      {/* Hero background */}
+      <div className="absolute inset-0 -z-10 opacity-30">
+        <img
+          src="/manus-storage/clubstats-hero-bg_67c2104c.png"
+          alt=""
+          className="w-full h-96 object-cover"
+        />
+      </div>
       {/* Hero */}
       <motion.section
         initial={{ opacity: 0, y: 30 }}
@@ -52,17 +60,15 @@ export default function Home() {
         className="relative mb-12 lg:mb-16"
       >
         <div className="flex flex-col items-start gap-6">
-          <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-xs font-medium text-muted-foreground backdrop-blur-sm">
-            <span className="h-1.5 w-1.5 rounded-full bg-green-400" />
+          <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-xs font-medium text-gray-300">
+            <span className="h-1.5 w-1.5 rounded-full bg-white" />
             Pro Clubs Analytics Platform
           </div>
 
           <h1 className="font-display text-4xl font-bold leading-tight tracking-tight text-white sm:text-5xl lg:text-6xl">
             Analyze any club.
             <br />
-            <span className="bg-gradient-to-r from-violet-400 via-blue-400 to-emerald-400 bg-clip-text text-transparent">
-              Track every match.
-            </span>
+            <span className="text-white">Track every match.</span>
           </h1>
 
           <p className="max-w-2xl text-base text-muted-foreground sm:text-lg">
@@ -73,14 +79,14 @@ export default function Home() {
           <div className="flex flex-col gap-3 sm:flex-row">
             <Link
               href="/search"
-              className="inline-flex items-center gap-2 rounded-lg bg-primary px-6 py-3 text-sm font-semibold text-white transition-all duration-200 hover:bg-primary/90 hover:shadow-[0_0_30px_rgba(124,58,237,0.3)] active:scale-[0.98]"
+              className="inline-flex items-center gap-2 rounded-lg bg-white text-black px-6 py-3 text-sm font-semibold transition-all duration-200 hover:bg-gray-100 active:scale-[0.98]"
             >
               <Search className="h-4 w-4" />
               Buscar Clube
             </Link>
             <Link
               href="/club"
-              className="inline-flex items-center gap-2 rounded-lg border border-white/10 bg-white/5 px-6 py-3 text-sm font-semibold text-white backdrop-blur-sm transition-all duration-200 hover:border-white/20 hover:bg-white/10 active:scale-[0.98]"
+              className="inline-flex items-center gap-2 rounded-lg border border-white/40 bg-transparent px-6 py-3 text-sm font-semibold text-white transition-all duration-200 hover:border-white/60 hover:bg-white/5 active:scale-[0.98]"
             >
               Ver Demo
               <ArrowRight className="h-4 w-4" />
@@ -101,13 +107,13 @@ export default function Home() {
           return (
             <motion.div key={feature.title} variants={item}>
               <GlassCard padding="lg" hover="lift" className="h-full">
-                <div className="mb-4 inline-flex rounded-xl bg-primary/10 p-3">
-                  <Icon className="h-6 w-6 text-primary" />
+                <div className="mb-4 inline-flex rounded-xl bg-white/10 p-3">
+                  <Icon className="h-6 w-6 text-white" />
                 </div>
                 <h3 className="font-display text-lg font-semibold text-white">
                   {feature.title}
                 </h3>
-                <p className="mt-2 text-sm text-muted-foreground">
+                  <p className="mt-2 text-sm text-gray-400">
                   {feature.description}
                 </p>
               </GlassCard>

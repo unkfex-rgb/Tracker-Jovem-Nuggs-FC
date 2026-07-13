@@ -54,7 +54,7 @@ export function Navigation() {
         </nav>
 
         <div className="px-6 py-4">
-          <p className="text-xs text-muted-foreground">
+          <p className="text-xs text-gray-500">
             Not affiliated with EA Sports
           </p>
         </div>
@@ -62,7 +62,7 @@ export function Navigation() {
 
       {/* Mobile bottom nav */}
       <nav
-        className="fixed bottom-0 left-0 right-0 z-40 flex items-center justify-around border-t border-white/8 bg-sidebar/90 backdrop-blur-xl lg:hidden"
+        className="fixed bottom-0 left-0 right-0 z-40 flex items-center justify-around border-t border-white/10 bg-black/50 backdrop-blur-xl lg:hidden"
         aria-label="Navegação principal"
       >
         {navItems.map((item) => {
@@ -74,7 +74,7 @@ export function Navigation() {
               href={item.href}
               className={cn(
                 "flex flex-col items-center gap-1 px-3 py-2.5 text-[10px] font-medium transition-colors",
-                isActive ? "text-primary" : "text-muted-foreground"
+                isActive ? "text-white" : "text-gray-400"
               )}
             >
               <Icon className="h-5 w-5" />
