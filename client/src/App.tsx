@@ -43,22 +43,30 @@ function Router() {
   return isAuthenticated ? <AppRouter /> : <AuthRouter />;
 }
 
-function App() {
+function AppContent() {
   const { isAuthenticated } = useAuth();
 
+  return (
+    <>
+      <Toaster />
+      {isAuthenticated ? (
+        <Layout>
+          <Router />
+        </Layout>
+      ) : (
+        <Router />
+      )}
+    </>
+  );
+}
+
+function App() {
   return (
     <ErrorBoundary>
       <ThemeProvider defaultTheme="dark">
         <AuthProvider>
           <TooltipProvider>
-            <Toaster />
-            {isAuthenticated ? (
-              <Layout>
-                <Router />
-              </Layout>
-            ) : (
-              <Router />
-            )}
+            <AppContent />
           </TooltipProvider>
         </AuthProvider>
       </ThemeProvider>
