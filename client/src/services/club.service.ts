@@ -46,14 +46,37 @@ function computeKPIs(club: Club, matches: Match[]): KPIs {
 }
 
 export const clubService = {
-  async getClub(_id: string): Promise<Club> {
-    await delay();
-    return clubData as Club;
+  async getClub(id: string, platform: string = "common-gen5"): Promise<Club> {
+    try {
+      const response = await fetch(`/api/club-stats?clubId=${id}&platform=${platform}`);
+      if (!response.ok) throw new Error("Failed to fetch from EA");
+      const eaData = await response.json();
+      
+      // Transform EA data to our Club type
+      const clubInfo = Array.isArray(eaData) ? eaData[0] : eaData;
+      return {
+        id: clubInfo.clubId.toString(),
+        name: clubInfo.name,
+        platform: platform,
+        skillRating: parseInt(clubInfo.skillRating || "0"),
+        record: {
+          wins: parseInt(clubInfo.wins || "0"),
+          draws: parseInt(clubInfo.ties || "0"),
+          losses: parseInt(clubInfo.losses || "0"),
+        },
+        crestUrl: clubInfo.customKit?.crestAssetId 
+          ? `https://eafc24.content.easports.com/fifa/fltOnlineAssets/24B23FDE-7835-41C2-87A2-F453DFDB2E82/2024/fcweb/crests/256x256/l${clubInfo.customKit.crestAssetId}.png`
+          : undefined
+      } as Club;
+    } catch (error) {
+      console.error("Error fetching club:", error);
+      return clubData as Club;
+    }
   },
 
-  async getKPIs(_id: string): Promise<KPIs> {
-    await delay();
-    return computeKPIs(clubData as Club, matchesData as Match[]);
+  async getKPIs(id: string): Promise<KPIs> {
+    const club = await this.getClub(id);
+    return computeKPIs(club, matchesData as Match[]);
   },
 
   async getRecentMatches(_id: string, limit: number = 10): Promise<Match[]> {
